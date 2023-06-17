@@ -1,8 +1,11 @@
 package com.itheima.reggie;
 
+import com.itheima.reggie.entity.Employee;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 
@@ -15,6 +18,17 @@ public class Test01 {
 
     @Autowired
     RedisTemplate redisTemplate;
+    @Autowired
+    CacheManager cacheManager;
+
+    @Cacheable
+    @Test
+    public void testCache(){
+        Employee employee = new Employee();
+        employee.setId(1L);
+        employee.setName("yang");
+
+    }
 
     @Test
     public void testHash(){
@@ -22,7 +36,7 @@ public class Test01 {
         hash.put("002","name","xiaoming");
         hash.put("002","age","123");
         hash.put("002","addr","北京");
-   
+
     }
 
     @Test
