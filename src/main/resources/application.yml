@@ -61,6 +61,7 @@ mybatis-plus:
     db-config:
       id-type: ASSIGN_ID
 reggie:
-  path: F:\瑞吉外卖\1 瑞吉外卖项目\资料\图片资源\
+  path: /usr/local/img/
+#  path: F:\瑞吉外卖\1 瑞吉外卖项目\资料\图片资源\
 
 
